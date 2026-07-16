@@ -18,15 +18,17 @@ const headlineReveal = {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-surface pb-20 pt-14 sm:pb-24 sm:pt-16 lg:pb-32 lg:pt-20">
+    <section className="relative overflow-hidden bg-surface pb-20 lg:pb-32 lg:pt-20">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-teal-100 opacity-60 blur-3xl"
+        className="pointer-events-none absolute -right-24 -top-24 hidden h-72 w-72 rounded-full bg-teal-100 opacity-60 blur-3xl lg:block"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:gap-8">
-          <div>
+      <div className="relative mx-auto max-w-7xl lg:px-12">
+        <div className="grid items-center gap-0 lg:grid-cols-[1.1fr,0.9fr] lg:gap-8">
+          <HeroVisual />
+
+          <div className="relative z-10 -mt-16 px-6 sm:px-8 lg:order-1 lg:mt-0 lg:px-0">
             <motion.span
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,23 +77,21 @@ export default function Hero() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.65 }}
-              className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center"
+              className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
             >
-              <CallButton className="sm:flex-1 sm:justify-center" />
-              <WhatsAppButton className="sm:flex-1 sm:justify-center" />
+              <CallButton />
+              <WhatsAppButton />
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.85 }}
-              className="mt-12"
+              className="mt-8 lg:mt-12"
             >
               <TrustBar />
             </motion.div>
           </div>
-
-          <HeroVisual />
         </div>
       </div>
     </section>

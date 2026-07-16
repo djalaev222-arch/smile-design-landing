@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Manrope } from "next/font/google";
 import SiteHeader from "@/components/layout/SiteHeader";
-import StickyCallBar from "@/components/layout/StickyCallBar";
 import "./globals.css";
 
 const display = Playfair_Display({
@@ -28,10 +27,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ru">
-      <body className={`${display.variable} ${body.variable} pb-[76px] lg:pb-0`}>
+      <body className={`${display.variable} ${body.variable}`}>
         <SiteHeader />
         {children}
-        <StickyCallBar />
       </body>
     </html>
   );
