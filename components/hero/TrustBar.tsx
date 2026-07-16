@@ -1,9 +1,14 @@
+import StarIcon from "@/components/icons/StarIcon";
 import { CLINIC } from "@/lib/constants";
 
 const items = [
-  { value: CLINIC.trust.yearsInBusiness, label: "лет клинике" },
-  { value: CLINIC.trust.doctorsCount, label: "врачей" },
-  { value: `${CLINIC.trust.rating} ★`, label: `${CLINIC.trust.reviewsCount} отзывов` },
+  { value: CLINIC.trust.yearsInBusiness, label: "лет клинике", hasStar: false },
+  { value: CLINIC.trust.doctorsCount, label: "врачей", hasStar: false },
+  {
+    value: CLINIC.trust.rating,
+    label: `${CLINIC.trust.reviewsCount} отзывов`,
+    hasStar: true,
+  },
 ];
 
 export default function TrustBar() {
@@ -12,8 +17,9 @@ export default function TrustBar() {
       {items.map((item) => (
         <div key={item.label} className="flex items-baseline gap-2">
           <dt className="sr-only">{item.label}</dt>
-          <dd className="font-display text-2xl font-semibold text-coral-700">
+          <dd className="flex items-center gap-1 font-display text-2xl font-semibold text-coral-700">
             {item.value}
+            {item.hasStar && <StarIcon className="h-4 w-4" />}
           </dd>
           <span className="font-body text-sm text-ink-faint">{item.label}</span>
         </div>

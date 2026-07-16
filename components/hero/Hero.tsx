@@ -77,8 +77,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.65 }}
               className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center"
             >
-              <CallButton />
-              <WhatsAppButton />
+              <CallButton className="sm:flex-1 sm:justify-center" />
+              <WhatsAppButton className="sm:flex-1 sm:justify-center" />
             </motion.div>
 
             <motion.div

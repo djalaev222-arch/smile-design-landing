@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import CheckIcon from "@/components/icons/CheckIcon";
+import StarIcon from "@/components/icons/StarIcon";
 import { CLINIC } from "@/lib/constants";
 
 export default function HeroVisual() {
@@ -37,7 +39,7 @@ export default function HeroVisual() {
         className="absolute -left-4 top-8 flex items-center gap-3 rounded-2xl bg-surface-card px-4 py-3 shadow-card sm:-left-8"
       >
         <span className="flex h-9 w-9 items-center justify-center rounded-full bg-success-100 text-success-700">
-          ✓
+          <CheckIcon className="h-4 w-4" />
         </span>
         <div className="leading-tight">
           <p className="font-body text-sm font-bold text-ink">Без боли</p>
@@ -51,8 +53,9 @@ export default function HeroVisual() {
         transition={{ duration: 0.6, delay: 0.9 }}
         className="absolute -bottom-5 right-2 flex items-center gap-3 rounded-2xl bg-surface-card px-4 py-3 shadow-card sm:-right-6"
       >
-        <span className="font-display text-xl font-semibold text-coral-700">
-          {CLINIC.trust.rating} ★
+        <span className="flex items-center gap-1 font-display text-xl font-semibold text-coral-700">
+          {CLINIC.trust.rating}
+          <StarIcon className="h-4 w-4" />
         </span>
         <div className="leading-tight">
           <p className="font-body text-xs text-ink-faint">

@@ -33,7 +33,7 @@ export default function SiteHeader() {
             className="h-10 w-auto"
             priority
           />
-          <span className="font-display text-lg font-semibold tracking-tight text-ink">
+          <span className="font-display text-xl font-bold tracking-tight text-ink">
             Smile Design
           </span>
         </Link>
@@ -43,7 +43,7 @@ export default function SiteHeader() {
             <a
               key={link.href}
               href={link.href}
-              className="font-body text-sm font-medium text-ink-soft transition-colors hover:text-teal-700"
+              className="font-body text-base font-semibold text-ink-soft transition-colors hover:text-teal-700"
             >
               {link.label}
             </a>
@@ -57,7 +57,7 @@ export default function SiteHeader() {
             aria-label={`Позвонить в клинику Smile Design: ${CLINIC.phoneDisplay}`}
           >
             <PhoneIcon className="h-4 w-4" />
-            <span className="font-body text-sm font-bold">{CLINIC.phoneDisplay}</span>
+            <span className="font-body text-base font-bold">{CLINIC.phoneDisplay}</span>
           </a>
 
           <button
@@ -88,7 +88,7 @@ export default function SiteHeader() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="rounded-lg px-2 py-2.5 font-body text-base font-medium text-ink-soft transition-colors hover:bg-surface-alt hover:text-teal-700"
+                  className="rounded-lg px-2 py-2.5 font-body text-lg font-semibold text-ink-soft transition-colors hover:bg-surface-alt hover:text-teal-700"
                 >
                   {link.label}
                 </a>
