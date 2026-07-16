@@ -81,45 +81,47 @@ export default function SiteHeader() {
 
       <AnimatePresence>
         {isMenuOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setIsMenuOpen(false)}
-              aria-hidden="true"
-              className="fixed inset-0 z-40 bg-ink/40 backdrop-blur-sm lg:hidden"
-            />
-            <motion.nav
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed inset-y-0 right-0 z-40 flex w-full max-w-xs flex-col gap-1 overflow-y-auto bg-surface p-6 pt-24 shadow-soft lg:hidden"
-              aria-label="Мобильная навигация"
-            >
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="rounded-lg px-2 py-2.5 font-body text-lg font-semibold text-ink-soft transition-colors hover:bg-surface-alt hover:text-teal-700"
-                >
-                  {link.label}
-                </a>
-              ))}
+          <motion.div
+            key="mobile-menu-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setIsMenuOpen(false)}
+            aria-hidden="true"
+            className="fixed inset-0 z-40 bg-ink/40 backdrop-blur-sm lg:hidden"
+          />
+        )}
+        {isMenuOpen && (
+          <motion.nav
+            key="mobile-menu-drawer"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-y-0 right-0 z-40 flex w-full max-w-xs flex-col gap-1 overflow-y-auto bg-surface p-6 pt-24 shadow-soft lg:hidden"
+            aria-label="Мобильная навигация"
+          >
+            {NAV_LINKS.map((link) => (
               <a
-                href={CLINIC.phoneHref}
-                className="mt-3 flex items-center justify-center gap-2 rounded-full bg-teal-700 py-3 text-surface"
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="rounded-lg px-2 py-2.5 font-body text-lg font-semibold text-ink-soft transition-colors hover:bg-surface-alt hover:text-teal-700"
               >
-                <PhoneIcon className="h-4 w-4" />
-                <span className="font-body text-sm font-bold">
-                  Позвонить · {CLINIC.phoneDisplay}
-                </span>
+                {link.label}
               </a>
-            </motion.nav>
-          </>
+            ))}
+            <a
+              href={CLINIC.phoneHref}
+              className="mt-3 flex items-center justify-center gap-2 rounded-full bg-teal-700 py-3 text-surface"
+            >
+              <PhoneIcon className="h-4 w-4" />
+              <span className="font-body text-sm font-bold">
+                Позвонить · {CLINIC.phoneDisplay}
+              </span>
+            </a>
+          </motion.nav>
         )}
       </AnimatePresence>
     </header>
