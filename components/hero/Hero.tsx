@@ -39,7 +39,7 @@ export default function Hero() {
               Стоматология в {CLINIC.city}
             </motion.span>
 
-            <h1 className="font-display text-hero font-medium text-ink">
+            <h1 className="font-display text-hero font-semibold text-ink">
               {["Здоровые зубы"].map((line, i) => (
                 <motion.span
                   key={line}

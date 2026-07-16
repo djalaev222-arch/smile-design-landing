@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
@@ -12,6 +12,13 @@ import { CLINIC, NAV_LINKS } from "@/lib/constants";
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   const handleLogoClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (window.location.pathname !== "/") return;
     event.preventDefault();
@@ -22,7 +29,7 @@ export default function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/10 bg-surface/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-ink/10 bg-surface/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3 sm:px-8 lg:px-12">
         <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2.5">
           <Image
@@ -74,15 +81,24 @@ export default function SiteHeader() {
 
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.nav
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-ink/10 bg-surface lg:hidden"
-            aria-label="Мобильная навигация"
-          >
-            <div className="flex flex-col gap-1 px-6 py-4 sm:px-8">
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setIsMenuOpen(false)}
+              aria-hidden="true"
+              className="fixed inset-0 z-40 bg-ink/40 backdrop-blur-sm lg:hidden"
+            />
+            <motion.nav
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed inset-y-0 right-0 z-40 flex w-full max-w-xs flex-col gap-1 overflow-y-auto bg-surface p-6 pt-24 shadow-soft lg:hidden"
+              aria-label="Мобильная навигация"
+            >
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
@@ -102,8 +118,8 @@ export default function SiteHeader() {
                   Позвонить · {CLINIC.phoneDisplay}
                 </span>
               </a>
-            </div>
-          </motion.nav>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
     </header>

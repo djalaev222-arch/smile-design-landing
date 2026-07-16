@@ -16,23 +16,28 @@ const items = [
   },
   {
     value: CLINIC.trust.rating,
-    label: "отзывов",
-    srLabel: `рейтинг ${CLINIC.trust.rating}, ${CLINIC.trust.reviewsCount} отзывов`,
+    label: "рейтинг",
+    srLabel: `рейтинг ${CLINIC.trust.rating} из 5, ${CLINIC.trust.reviewsCount} отзывов`,
     hasStar: true,
   },
 ];
 
 export default function TrustBar() {
   return (
-    <dl className="flex flex-nowrap items-center justify-between gap-x-3 border-t border-ink/10 pt-5 sm:justify-start sm:gap-x-6 lg:gap-x-8 lg:pt-6">
-      {items.map((item) => (
-        <div key={item.label} className="flex items-baseline gap-1.5">
-          <dt className="sr-only">{item.srLabel}</dt>
-          <dd className="flex items-center gap-1 font-display text-lg font-semibold text-coral-700 sm:text-xl lg:text-2xl">
-            {item.value}
-            {item.hasStar && <StarIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
-          </dd>
-          <span className="font-body text-xs text-ink-faint sm:text-sm">{item.label}</span>
+    <dl className="flex flex-nowrap items-center justify-between gap-x-3 border-t border-ink/10 pt-5 sm:justify-start sm:gap-x-5 lg:gap-x-8 lg:pt-6">
+      {items.map((item, index) => (
+        <div key={item.label} className="flex items-baseline gap-3 sm:gap-5 lg:gap-8">
+          {index > 0 && (
+            <span aria-hidden="true" className="h-6 w-px shrink-0 bg-ink/10 sm:h-8" />
+          )}
+          <div className="flex items-baseline gap-1.5">
+            <dt className="sr-only">{item.srLabel}</dt>
+            <dd className="flex items-center gap-1 font-display text-lg font-semibold text-coral-700 sm:text-xl lg:text-2xl">
+              {item.value}
+              {item.hasStar && <StarIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
+            </dd>
+            <span className="font-body text-xs text-ink-faint sm:text-sm">{item.label}</span>
+          </div>
         </div>
       ))}
     </dl>
