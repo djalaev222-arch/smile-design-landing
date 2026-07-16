@@ -49,6 +49,7 @@ const config: Config = {
       },
       fontSize: {
         hero: ["clamp(2.75rem, 2rem + 3.2vw, 5.25rem)", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
+        "hero-sm": ["clamp(2rem, 1.6rem + 4vw, 2.75rem)", { lineHeight: "1.08", letterSpacing: "-0.01em" }],
       },
       spacing: {
         section: "clamp(3rem, 2rem + 4vw, 7rem)",

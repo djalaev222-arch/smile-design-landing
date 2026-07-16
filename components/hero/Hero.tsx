@@ -39,7 +39,7 @@ export default function Hero() {
               Стоматология в {CLINIC.city}
             </motion.span>
 
-            <h1 className="font-display text-hero font-semibold text-ink">
+            <h1 className="font-display text-hero-sm font-semibold text-ink lg:text-hero">
               {["Здоровые зубы"].map((line, i) => (
                 <motion.span
                   key={line}
@@ -67,7 +67,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-6 max-w-xl font-body text-lg text-ink-soft sm:text-xl"
+              className="mt-6 max-w-xl font-body text-base text-ink-soft sm:text-lg lg:text-xl"
             >
               Лечение, протезирование и детский приём в одной клинике —
               с гарантией на все виды работ и понятной ценой до начала лечения.

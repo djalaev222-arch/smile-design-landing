@@ -17,7 +17,7 @@ const body = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Smile Design — стоматология в Каспийске",
+  title: "Smile Design — Стоматология в Каспийске",
   description:
     "Здоровые зубы без страха и очередей. Лечение, протезирование и детский приём в стоматологии Smile Design, Каспийск.",
 };
