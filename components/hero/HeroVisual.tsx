@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
-import DoctorPortraitPlaceholder from "@/components/hero/DoctorPortraitPlaceholder";
 import { CLINIC } from "@/lib/constants";
 
 export default function HeroVisual() {
@@ -17,8 +17,17 @@ export default function HeroVisual() {
         className="absolute -inset-8 -z-10 rounded-[3rem] bg-teal-100 blur-3xl opacity-70 animate-float"
       />
 
-      <div className="relative overflow-hidden rounded-[2.5rem] shadow-soft">
-        <DoctorPortraitPlaceholder className="aspect-[4/5] h-auto w-full" />
+      <div
+        className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-soft [mask-image:linear-gradient(to_right,transparent_0%,black_38%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_38%)]"
+      >
+        <Image
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/doctor.jpg`}
+          alt="Врач-стоматолог клиники Smile Design"
+          fill
+          priority
+          sizes="(min-width: 1024px) 40vw, 90vw"
+          className="object-cover"
+        />
       </div>
 
       <motion.div
