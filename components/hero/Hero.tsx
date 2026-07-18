@@ -25,7 +25,7 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto max-w-7xl lg:px-12">
-        <div className="grid items-center gap-0 lg:grid-cols-[1.1fr,0.9fr] lg:gap-8">
+        <div className="grid items-center gap-0 lg:grid-cols-[0.95fr,1.05fr] lg:gap-8">
           <HeroVisual />
 
           <div className="relative z-10 -mt-16 px-6 sm:px-8 lg:order-1 lg:mt-0 lg:px-0">
@@ -36,7 +36,7 @@ export default function Hero() {
               className="mb-6 inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-1.5 font-body text-sm font-medium text-teal-700"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-teal-500" />
-              Стоматология в {CLINIC.city}
+              Стоматология в {CLINIC.cityPrepositional}
             </motion.span>
 
             <h1 className="font-display text-hero-sm font-semibold text-ink lg:text-hero">

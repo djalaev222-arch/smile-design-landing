@@ -18,13 +18,8 @@ export default function CallButton({ className }: { className?: string }) {
         <span className="absolute inset-0 rounded-full border border-surface/60 animate-pulse-ring" />
         <PhoneIcon className="h-4 w-4 text-surface" />
       </span>
-      <span className="flex flex-col items-start leading-tight">
-        <span className="font-body text-sm font-bold tracking-tight">
-          Позвонить
-        </span>
-        <span className="font-body text-xs font-medium text-surface/90">
-          {CLINIC.phoneDisplay}
-        </span>
+      <span className="font-body text-sm font-bold tracking-tight">
+        Позвонить
       </span>
     </motion.a>
   );

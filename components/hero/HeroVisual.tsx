@@ -19,7 +19,7 @@ export default function HeroVisual() {
         className="absolute -inset-8 -z-10 hidden rounded-[3rem] bg-teal-100 opacity-70 blur-3xl animate-float lg:block"
       />
 
-      <div className="relative aspect-[4/3] w-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_48%,transparent_92%)] [-webkit-mask-image:linear-gradient(to_bottom,black_48%,transparent_92%)] lg:aspect-[4/5] lg:rounded-[2.5rem] lg:shadow-soft lg:[mask-image:linear-gradient(to_right,transparent_0%,black_38%)] lg:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_38%)]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_48%,transparent_92%)] [-webkit-mask-image:linear-gradient(to_bottom,black_48%,transparent_92%)] lg:aspect-[3/4] lg:rounded-[2.5rem] lg:shadow-soft lg:[mask-image:linear-gradient(to_right,transparent_0%,black_50%)] lg:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_50%)]">
         <Image
           src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/doctor.jpg`}
           alt="Врач-стоматолог клиники Smile Design"

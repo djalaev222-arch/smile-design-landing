@@ -2,6 +2,7 @@
 export const CLINIC = {
   name: "Smile Design",
   city: "Каспийск",
+  cityPrepositional: "Каспийске", // предложный падеж: "в Каспийске"
   phoneDisplay: "+7 (8246) XX-XX-XX",
   phoneHref: "tel:+78246000000",
   whatsappHref: "https://wa.me/79280000000",
