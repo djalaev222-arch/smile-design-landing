@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Golos_Text, Manrope } from "next/font/google";
 import SiteHeader from "@/components/layout/SiteHeader";
+import ScrollRevealController from "@/components/ui/ScrollRevealController";
 import "./globals.css";
 
 const display = Golos_Text({
@@ -27,6 +28,10 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${display.variable} ${body.variable}`}>
+        <noscript>
+          <style>{`[data-reveal]{opacity:1 !important;transform:none !important;}`}</style>
+        </noscript>
+        <ScrollRevealController />
         <SiteHeader />
         {children}
       </body>

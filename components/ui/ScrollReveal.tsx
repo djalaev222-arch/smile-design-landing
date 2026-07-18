@@ -1,29 +1,31 @@
-"use client";
-
-import { motion } from "motion/react";
 import type { ReactNode } from "react";
 
 type ScrollRevealProps = {
   children: ReactNode;
   className?: string;
+  /** Stagger delay in ms, applied once the element enters the viewport. */
   delay?: number;
   as?: "div" | "section";
 };
 
+/**
+ * Marks a block for scroll-triggered fade-in + slide-up. The actual
+ * IntersectionObserver logic lives in ScrollRevealController (mounted once
+ * in the root layout) — this component just emits the data-reveal
+ * attribute the CSS/JS pair look for, so it stays server-renderable.
+ */
 export default function ScrollReveal({
   children,
   className,
   delay = 0,
   as = "div",
 }: ScrollRevealProps) {
-  const Component = motion[as];
+  const Component = as;
 
   return (
     <Component
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] }}
+      data-reveal=""
+      data-reveal-delay={delay > 0 ? delay : undefined}
       className={className}
     >
       {children}

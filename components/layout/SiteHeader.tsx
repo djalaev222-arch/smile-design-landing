@@ -64,7 +64,7 @@ export default function SiteHeader() {
               href={CLINIC.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden h-11 w-11 items-center justify-center rounded-full border-2 border-teal-600/40 text-teal-700 transition-colors hover:border-teal-600 hover:bg-teal-50 lg:flex"
+              className="hidden h-11 w-11 items-center justify-center rounded-full border-2 border-teal-600/40 text-teal-700 transition-colors duration-200 hover:border-teal-600 hover:bg-teal-50 lg:flex"
               aria-label="Написать клинике Smile Design в WhatsApp"
             >
               <WhatsAppIcon className="h-5 w-5" />
@@ -72,7 +72,7 @@ export default function SiteHeader() {
 
             <a
               href={CLINIC.phoneHref}
-              className="hidden items-center gap-2 rounded-full bg-teal-700 px-5 py-2.5 text-surface transition-colors hover:bg-teal-900 lg:flex"
+              className="hidden items-center gap-2 rounded-full bg-teal-700 px-5 py-2.5 text-surface transition-colors duration-200 hover:bg-teal-900 lg:flex"
               aria-label={`Позвонить в клинику Smile Design: ${CLINIC.phoneDisplay}`}
             >
               <PhoneIcon className="h-4 w-4" />
