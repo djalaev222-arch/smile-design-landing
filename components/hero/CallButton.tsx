@@ -11,7 +11,7 @@ export default function CallButton({ className }: { className?: string }) {
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
       transition={{ type: "spring", stiffness: 400, damping: 22 }}
-      className={`group relative flex items-center gap-3 overflow-hidden rounded-full bg-teal-700 px-5 py-3 text-surface shadow-soft transition-colors hover:bg-teal-900 ${className ?? ""}`}
+      className={`group relative flex items-center justify-center gap-3 overflow-hidden rounded-full bg-teal-700 px-6 py-3.5 text-surface shadow-soft transition-colors hover:bg-teal-900 ${className ?? ""}`}
       aria-label={`Позвонить в клинику Smile Design: ${CLINIC.phoneDisplay}`}
     >
       <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-surface/20">

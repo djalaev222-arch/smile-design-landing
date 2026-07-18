@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Manrope } from "next/font/google";
+import { Golos_Text, Manrope } from "next/font/google";
 import SiteHeader from "@/components/layout/SiteHeader";
 import "./globals.css";
 
-const display = Playfair_Display({
+const display = Golos_Text({
   subsets: ["latin", "cyrillic"],
   variable: "--font-display",
-  weight: ["500", "600", "700"],
-  style: ["normal", "italic"],
+  weight: ["600", "700", "800"],
 });
 
 const body = Manrope({

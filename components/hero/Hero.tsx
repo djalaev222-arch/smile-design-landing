@@ -59,7 +59,7 @@ export default function Hero() {
                 variants={headlineReveal}
                 className="block"
               >
-                <span className="italic text-teal-600">без страха</span> и очередей
+                <span className="text-teal-600">без страха</span> и очередей
               </motion.span>
             </h1>
 
