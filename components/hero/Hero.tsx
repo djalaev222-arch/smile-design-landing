@@ -40,7 +40,7 @@ export default function Hero() {
             </motion.span>
 
             <h1 className="font-display text-hero-sm font-semibold text-ink lg:text-hero">
-              {["Здоровые зубы"].map((line, i) => (
+              {["Красивая улыбка"].map((line, i) => (
                 <motion.span
                   key={line}
                   custom={i}
@@ -57,9 +57,9 @@ export default function Hero() {
                 initial="hidden"
                 animate="visible"
                 variants={headlineReveal}
-                className="block"
+                className="block text-teal-600"
               >
-                <span className="text-teal-600">без страха</span> и очередей
+                без боли
               </motion.span>
             </h1>
 

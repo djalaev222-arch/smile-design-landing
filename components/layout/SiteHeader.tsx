@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import PhoneIcon from "@/components/icons/PhoneIcon";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import MenuIcon from "@/components/icons/MenuIcon";
 import CloseIcon from "@/components/icons/CloseIcon";
 import { CLINIC, NAV_LINKS } from "@/lib/constants";
@@ -36,8 +37,8 @@ export default function SiteHeader() {
             <Image
               src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`}
               alt="Smile Design"
-              width={689}
-              height={741}
+              width={621}
+              height={482}
               className="h-10 w-auto"
               priority
             />
@@ -59,6 +60,16 @@ export default function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <a
+              href={CLINIC.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden h-11 w-11 items-center justify-center rounded-full border-2 border-teal-600/40 text-teal-700 transition-colors hover:border-teal-600 hover:bg-teal-50 lg:flex"
+              aria-label="Написать клинике Smile Design в WhatsApp"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+            </a>
+
             <a
               href={CLINIC.phoneHref}
               className="hidden items-center gap-2 rounded-full bg-teal-700 px-5 py-2.5 text-surface transition-colors hover:bg-teal-900 lg:flex"
