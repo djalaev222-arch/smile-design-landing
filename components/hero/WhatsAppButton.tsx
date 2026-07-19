@@ -13,9 +13,8 @@ export default function WhatsAppButton({ className }: { className?: string }) {
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-50">
         <WhatsAppIcon className="h-4 w-4" />
       </span>
-      <span className="flex flex-col items-start leading-tight">
-        <span className="font-body text-sm font-bold tracking-tight">Написать</span>
-        <span className="font-body text-xs font-medium text-teal-700/80">в WhatsApp</span>
+      <span className="whitespace-nowrap font-body text-sm font-bold tracking-tight">
+        Написать в WhatsApp
       </span>
     </a>
   );

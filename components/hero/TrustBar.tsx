@@ -99,7 +99,7 @@ export default function TrustBar() {
           )}
           <div className="flex items-center gap-1.5">
             <dt className="sr-only">{item.srLabel}</dt>
-            <dd className="flex items-center gap-1 font-display text-lg font-semibold leading-none text-coral-700 sm:text-xl lg:text-2xl">
+            <dd className="flex items-center gap-1 font-display text-lg font-semibold leading-none text-teal-600 sm:text-xl lg:text-2xl">
               <span
                 ref={(el) => {
                   numberRefs.current[index] = el;
