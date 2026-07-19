@@ -33,7 +33,7 @@ export default function HeroVisual() {
       </div>
 
       <div className="absolute -bottom-5 right-2 hidden animate-fade-in-up items-center gap-3 rounded-2xl bg-surface-card px-4 py-3 opacity-0 shadow-card [animation-delay:900ms] sm:-right-6 lg:flex">
-        <span className="flex items-center gap-1 font-display text-xl font-semibold text-coral-700">
+        <span className="flex items-center gap-1 font-display text-xl font-semibold text-teal-600">
           {CLINIC.trust.rating}
           <StarIcon className="h-4 w-4" />
         </span>
